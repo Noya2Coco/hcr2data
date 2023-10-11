@@ -1,5 +1,7 @@
 # hcr2Adventure : Data Logs of Adventure Ranking
+
 ---
+
 ## Language : English
 ***Program aimed at recording daily world ranking data in the Adventure category of the mobile game Hill Climb Racing 2.***
 
@@ -16,6 +18,8 @@
  - [ ] Login page to be able to access sensitive pages
  - [ ] ***(SENSITIVE)*** Suspicious data moderation page
  - [ ] ***(SENSITIVE)*** Moderation page for validated data (entire logs)
+
+---
 
 ## Language : Français
 ***Programme ayant pour but d'enregistrer quotidiennement les données du classement mondial dans la catégorie Aventure du jeu mobile Hill Climb Racing 2.***
