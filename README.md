@@ -1,4 +1,5 @@
 # hcr2Adventure : Data Logs of Adventure Ranking
+---
 ## Language : English
 ***Program aimed at recording daily world ranking data in the Adventure category of the mobile game Hill Climb Racing 2.***
 
