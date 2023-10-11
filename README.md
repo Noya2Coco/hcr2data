@@ -1,8 +1,7 @@
 # hcr2Adventure : Data Logs of Adventure Ranking
 
 ---
-
-## Language : English
+## Language : <ins>English</ins>
 ***Program aimed at recording daily world ranking data in the Adventure category of the mobile game Hill Climb Racing 2.***
 
  > The program relies on the data usually transmitted from the Fingersoft API to the game. It does what is necessary to be able to read and record them in order to be able to implement interesting information and analyzes on the Adventure rankings.
