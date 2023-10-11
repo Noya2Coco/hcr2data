@@ -6,7 +6,7 @@
 
  > The program relies on the data usually transmitted from the Fingersoft API to the game. It does what is necessary to be able to read and record them in order to be able to implement interesting information and analyzes on the Adventure rankings.
 
- ## Tasks :
+ ### Tasks :
  - [ ] “Menu” page with the different possible redirections (buttons)
    - [ ] Data export buttons
    - [ ] Automatic buttons for data pages for each month
@@ -24,7 +24,7 @@
 
 > Le programme s'appuie sur les données habituellement transmises de l'api de Fingersoft vers le jeu. Il fait le nécessaire pour pouvoir les lires et les enregistres afin de pouvoir mettre en place des informations et des analyses intéréssantes sur le classement d'Aventure.
 
-## Tâches :
+### Tâches :
 - [ ] Page "Menu" avec les différentes redirections possibles (boutons)
   - [ ] Boutons exports des données
   - [ ] Boutons automatiques des pages des données de chaque mois
