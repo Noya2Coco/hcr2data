@@ -1,58 +1,89 @@
-/* Pour surligner en jaune */
-.yellow-text {
-	background-color: yellow;
+/* Palette de couleurs (background-color) *
+ * ====================================== *
+ * Boutons :							  *
+ *  - classic : #709CA7					  *
+ *  - hover : #137C8B					  *
+ *  - active : #344D59					  *
+ * ====================================== *
+ * Barre de navigation :				  *
+ *  - classic : #709CA7					  *
+ *  - Élements :						  *
+ *    - classic							  *
+ *      |=> rgba(10, 124, 141, 0.3)		  *
+ *    - hover : #137C8B					  *
+ *    - active : #344D59				  *
+ * ====================================== *
+ * Titre dans tableau :					  *
+ *  - classic : #B8CBD0					  *
+ * ====================================== *
+ * 
+ * 
+ */
+
+
+
+body {
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 15px;
+	margin-top: 0;
+	font-family: 'Helvetica', sans-serif;
+	
+	/* Empêcher la sélection de texte sur les navigateurs */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-/* Pour surligner en noir */
+
+/* Pour surligner une cellule d'un tableau en jaune */
+.yellow-text {
+	background-color: #B8CBD0;
+}
+
+/* Pour surligner une cellule d'un tableau en noir */
 .black-text {
 	background-color: black;
 }
 
+/* Pour le compteur (temps avant la prochaine mise à jour) */
 #countdown {
 	padding: 10px;
 }
 
+::placeholder{
+	color: #777;
+}
 
-/* ######################### */
-/* Style de tous les boutons */
-button, input[type="button"], input[type="submit"]{
-	width: 100%;
-	padding: 10px;
-	background-color: #007BFF;
+
+/* Style de tous les boutons hors formulaire */
+.button-outside-form{
+	padding: 10px 20px;
+	background-color: #709CA7;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
-button:hover, input[type="button"]:hover, input[type="submit"]:hover{
-	background-color: #0056B3;
+.button-outside-form:hover{
+	background-color: #137C8B;
 }
 
-button:active, input[type="button"]:active, input[type="submit"]:active{
-	background-color: #003580;
-}
-/* ######################### */
-/* ######################### */
-
-
-input[type="text"], input[type="password"], textarea, select{
-	width: calc(100% - 20px);
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
-	border-color: #007BFF;
-	outline: none;
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.button-outside-form:active{
+	background-color: #344D59;
 }
 
 
+/* ############################################ *
+ * STYLE POUR LES FORMULAIRES ET LEURS ELEMENTS *
+ * ############################################ */
 
-
-
+/* Style pour les formulaire et leurs éléments */
 form{
 	width: 300px;
 	margin: 0 auto;
@@ -68,16 +99,223 @@ form{
 }
 
 .form-title{
-	font-size: 18px;
-	color: #333;
-	margin-bottom: 15px;
 	font-weight: bold;
-	font-family: 'Helvetica', sans-serif;
 }
 
-::placeholder{
-	color: #777;
+/* Style de tous les boutons dans les formulaires */
+form button,form input[type="button"],form input[type="submit"]{
+	width: 100%;
+	padding: 10px;
+	background-color: #709CA7;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
 }
+
+form button:hover,form input[type="button"]:hover,form input[type="submit"]:hover{
+	background-color: #137C8B;
+}
+
+form button:active,form input[type="button"]:active,form input[type="submit"]:active{
+	background-color: #344D59;
+}
+
+/* Style pour les inputs dans les formulaires */
+input[type="text"], input[type="password"], textarea, select{
+	width: calc(100% - 20px);
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: box-shadow 1s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
+	border-color: #007BFF;
+	outline: none;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ############################################ *
+ * ############################################ *
+ * ############################################ */
+
+
+
+/* ######################################### *
+ * STYLE POUR LES TABLEAUX ET LEURS ELEMENTS *
+ * ######################################### */
+ 
+/* Style des tableaux */
+table{
+	border-collapse: collapse;
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+th{
+	background-color: #007BFF;
+	color: #fff;
+}
+
+th, td{
+	text-align: center;
+	padding: 10px;
+}
+
+tr, td {
+    transition: background-color 0.3s;
+}
+
+td {
+	color: #709CA7;
+}
+
+tr:nth-child(even){
+	background-color: #F2F2F2;
+}
+
+tr:hover{
+	background-color: #E1E1E1;
+}
+
+/*.column-1:hover {
+	.column-1 {
+		background-color: #E1E1E1;
+	}
+	background-color: #E1E1E1;
+}*/
+
+td:hover{
+	background-color: #D0D0D0;
+}
+
+.table-title{
+	color: #000000;
+}
+
+
+/* ######################################### *
+ * ######################################### *
+ * ######################################### */
+
+
+
+/* ################################################# *
+ * STYLE POUR LA BARRE DE NAVIGATION ET SES ÉLÉMENTS *
+ * ################################################# */
+
+/* Style de la navbar */
+.navbar {
+    background-color: #709CA7;
+    color: #fff;
+    border-bottom-left-radius: 20px; /* Coins inférieurs arrondis */
+    border-bottom-right-radius: 20px; /* Coins inférieurs arrondis */
+    padding: 8px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+/* Style de la liste non ordonnée (ul) */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style des éléments de la liste (li) */
+.navbar li {
+    display: inline;
+    background-color: rgba(10, 124, 141, 0.3);
+    padding: 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    font-size: 1.30em;
+    transition: background-color 0.3s;
+
+}
+
+@media screen and (max-width: 1401px) and (min-width: 1200px) {
+	.navbar{
+		padding: 7px;
+	}
+	
+	.navbar li{
+		padding: 7px;
+		font-size: 1.15em;
+	}
+}
+
+/* Changements des tailles de la navbar en fonction de la taille de l'écran */
+@media screen and (max-width: 700px){
+	.navbar{
+		padding: 6px;
+	}
+	
+	.navbar li{
+		padding: 6px;
+		font-size: 1em;
+	}
+}
+
+/* Autres tailles
+@media screen and (max-width: 1001px) and (min-width: 800px) {
+	.navbar{
+		padding: 5px;
+	}
+	
+	.navbar li{
+		padding: 5px;
+		font-size: 0.80em;
+	}
+}
+
+@media screen and (max-width: 801px) and (min-width: 600px) {
+	.navbar{
+		padding: 4px;
+	}
+	
+	.navbar li{
+		padding: 4px;
+		font-size: 0.60em;
+	}
+}
+
+@media screen and (max-width: 601px) {
+	.navbar{
+		padding: 3px;
+	}
+	
+	.navbar li{
+		padding: 3px;
+		font-size: 0.40em;
+	}
+}*/
+
+
+
+.navbar li:hover {
+    background-color: #137C8B;
+}
+
+.navbar li:active {
+	background-color: #344D59;
+}
+
+/* Style des liens (a) */
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s; /* Transition pour le changement de couleur au survol */
+}
+
+/* ################################################# *
+ * ################################################# *
+ * ################################################# */
 
 
 

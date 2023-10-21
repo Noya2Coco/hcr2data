@@ -1,5 +1,5 @@
 <?php
-include '../../scripts/sessionChecks.php';
+include 'sessionChecks.php';
 
 if ($_SESSION["connected"] === false){
 	header("Location: /");
