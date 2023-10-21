@@ -13,8 +13,8 @@
  *    - hover : #137C8B					  *
  *    - active : #344D59				  *
  * ====================================== *
- * Titre dans tableau :					  *
- *  - classic : #B8CBD0					  *
+ * Cellules dans tableau (hors titres) :  *
+ *  - classic : #709CA7					  *
  * ====================================== *
  * 
  * 
@@ -47,6 +47,10 @@ body {
 /* Pour surligner une cellule d'un tableau en noir */
 .black-text {
 	background-color: black;
+}
+
+.any-data{
+	color: rgba(10, 124, 141, 0.3);
 }
 
 /* Pour le compteur (temps avant la prochaine mise à jour) */
@@ -88,6 +92,8 @@ form{
 	width: 300px;
 	margin: 0 auto;
 	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	background-color: #F4F4F4;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -317,6 +323,11 @@ td:hover{
  * ################################################# *
  * ################################################# */
 
+
+a {
+	text-decoration: none;
+	color: #709CA7;
+}
 
 
 
