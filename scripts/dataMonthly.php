@@ -48,7 +48,7 @@ include 'sessionChecks.php';
 				<tr>
 			<?php
 			
-			$year = 22;
+			$year = 20;
 			$month = 0;
 			
 			foreach ($files as $file){			
@@ -73,18 +73,16 @@ include 'sessionChecks.php';
 						$month++;
 					}
 					elseif ($fileYear != $year){
-						while ($month != 13){
+						while ($fileYear != $year){
 							echo '<td class="any-data">Any Data</td>';
 							$month++;
-						}
-						
-						echo '</tr><tr>';
-						$year++;
-						$month = 0;
-						
-						if ($month == 0){
-							echo '<td class="table-title">20' . $year . '</td>';
-							$month++;
+							
+							if ($month == 13){
+								echo '</tr><tr>';
+								$year++;
+								echo '<td class="table-title">20' . $year . '</td>';
+								$month = 1;
+							}
 						}
 					
 						while ($fileMonth != $month){
