@@ -1,45 +1,10 @@
 <?php
-include 'sessionChecks.php';
-?>
-
-
-<!DOCTYPE html>
-<html lang='en'>
-    <head>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        
-        <title>HCR2 | AdventureData</title>
-        <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
-        <script>
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-                var favicon = document.querySelector("link[rel='icon']");
-                favicon.href = "/whiteDatabase.ico";
-            }
-        </script>
-    </head>
-    
-    <body>
-        <?php
-        include 'navbar.php';
-        
-        echo "Bienvenu " . ucfirst($_SESSION["username"]) . " !<br>";
-        echo $_SESSION["connected"] ? "Connecté : True<br>" : "Connecté : False<br>";
-
-        ?>
-        
-        <div id="countdown">Temps restant avant la prochaine mise à jour : <span class="countdown important-text">00:00:00</span></div>
-        <script src="countdown.js"></script>
-        
-        <?php
-        require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
+        require '../../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
         use PhpOffice\PhpSpreadsheet\IOFactory;
 
         // Chemin vers le fichier Excel
-        $chemin_fichier = '../data/logs/adventureData.xlsx';
+        $chemin_fichier = '../../data/dataMonthly/' . $filePath;
 
         try
         {
@@ -76,7 +41,7 @@ include 'sessionChecks.php';
                     else {
 						echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
 					}
-					
+                    
                     $numColumns += 1;
                 }
 
@@ -92,7 +57,3 @@ include 'sessionChecks.php';
             echo 'Une erreur s\'est produite : ', $e->getMessage();
         }
         ?>
-        
-        
-    </body>
-</html>

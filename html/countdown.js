@@ -16,9 +16,9 @@ function updateCountdown() {
     const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
     const seconds = Math.floor((timeRemaining / 1000) % 60);
     
-    const countdown = document.querySelector('.yellow-text');
+    const countdown = document.querySelector('.countdown');
     countdown.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    countdown.classList.add("yellow-text");
+    countdown.classList.add("countdown");
 }
 
 // Mettre à jour le compteur chaque seconde
