@@ -9,7 +9,7 @@ include 'sessionChecks.php';
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
         
         <title>HCR2 | AdventureData</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
@@ -93,6 +93,7 @@ include 'sessionChecks.php';
         }
         ?>
         
-        
+        <script src="../checkScrollbar.js"></script>';
+
     </body>
 </html>

@@ -215,11 +215,17 @@ td:hover{
 	align-items: center;
 }
 
+.align-left{
+	justify-content: flex-start;
+}
+
+/*
 @media screen and (min-width: 768px) {
 	.table-container {
 		justify-content: center;
 	}
 }
+*/
 
 
 /* ######################################### *
