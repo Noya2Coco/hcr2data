@@ -1,0 +1,14 @@
+A faire (principal) : 
+
+- Démarrage automatique du service chaque jour
+- Lignes ilogiques sur la détection
+- Lister top 120 joueurs
+- Corriger la limite des colonnes du tableau (de Z à AA problème)
+- Tesseract sur rasp
+- Token infini / renouvellement automatique
+- Redimensionner automatiquement image
+- Vérification détection des joueurs/scores valide
+- Site intéractif visible avec des données
+- Organiser le code, en fonctions et en fichiers
+- Déplacements automatique des fichiers pour faire de la journalisation
+
