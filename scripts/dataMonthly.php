@@ -2,7 +2,6 @@
 include 'sessionChecks.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -55,6 +54,7 @@ include 'sessionChecks.php';
 			if ($file !== '.' && $file !== '..'){
 				$fileYear = intval(substr($file, 0, 2));
 				$fileMonth = intval(substr($file, 3, 5));
+				$filePath = "/includes/chosenDataMonthly/";
 				
 				if ($month == 13){
 					$year++;
@@ -68,13 +68,12 @@ include 'sessionChecks.php';
 				}
 				
 				if ($fileYear == $year && $fileMonth == $month){
-						echo '<td>' . $file . '</td>';
-						$month++;
-						//echo '<a href="#">' . $file . '</a>';
+					echo '<td><a href=' . $filePath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
+					$month++;
 				}
 				elseif ($fileYear != $year){
 					while ($month != 13){
-						echo '<td></td>';
+						echo '<td class="any-data">Any Data</td>';
 						$month++;
 					}
 					
@@ -83,25 +82,25 @@ include 'sessionChecks.php';
 					$month = 0;
 					
 					if ($month == 0){
-						echo '<td>20' . $year . '</td>';
+						echo '<td class="table-title">20' . $year . '</td>';
 						$month++;
 					}
 				
 					while ($fileMonth != $month){
-						echo '<td></td>';
+						echo '<td class="any-data">Any Data</td>';
 						$month++;
 					}
-					
-					echo '<td>' . $file . '</td>';
+
+					echo '<td><a href=' . $filePath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
 					$month++;
 				}
 				elseif ($fileMonth != $month){
 					while ($fileMonth != $month){
-						echo '<td></td>';
+						echo '<td class="any-data">Any Data</td>';
 						$month++;
 					}
-					
-					echo '<td>' . $file . '</td>';
+										
+					echo '<td><a href=' . $filePath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
 					$month++;
 				}
 			}
