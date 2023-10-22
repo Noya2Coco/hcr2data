@@ -48,7 +48,7 @@ include 'sessionChecks.php';
         // Chemin vers le fichier Excel
         $chemin_fichier = '../DataFromHCR2Adventure/data/logs/adventureData.xlsx';
 
-        try 
+        try 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
         {
             // Charger le fichier Excel
             $spreadsheet = IOFactory::load($chemin_fichier);
