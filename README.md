@@ -13,7 +13,9 @@
    - [X] Connection/disconnection pages button
    - [ ] ***(SENSITIVE)*** Suspicious data moderation page button
    - [ ] ***(SENSITIVE)*** Moderation page button for validated data (entire logs)
- - [ ] Menu page with data graphs, last days,...
+ - [ ] Menu page with different important elements
+   - [ ] Graphs on data
+   - [ ] Scores from the last days
  - [X] Automatic pages for each month's data
  - [X] Login page to be able to access sensitive pages
  - [ ] ***(SENSITIVE)*** Suspicious data moderation page
@@ -33,7 +35,9 @@
    - [X] Bouton pages connexion / déconnexion
    - [ ] ***( SENSIBLE )*** Bouton page modération des données suspectes
    - [ ] ***( SENSIBLE )*** Bouton page modération des données validées (logs entières)
- - [ ] Page menu avec des graphiques des données, les derniers jours,...
+ - [ ] Page menu avec différents éléments importants
+   - [ ] Graphiques sur les datas
+   - [ ] Scores des derniers jours
  - [X] Pages automatiques pour les données de chaque mois
  - [X] Page de connexion pour pouvoir accéder aux pages sensibles
  - [ ] ***( SENSIBLE )*** Page de modération des données suspectes
