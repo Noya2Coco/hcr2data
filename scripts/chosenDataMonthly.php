@@ -8,5 +8,5 @@ else {
 }
 
 include 'navbar.php';
-$folderAndFilePath = 'dataMonthly/' . $filePath;
+$folderAndFilePath = ['dataMonthly/', $filePath];
 include 'showData.php';
