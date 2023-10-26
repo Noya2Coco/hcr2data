@@ -23,7 +23,7 @@
 				<?php 
 					if (!$_SESSION["connected"]){
 						?>
-						<li><a href="/includes/login.php">CONNECTION</a></li>
+						<li><a href="/includes/login.php">CONNEXION</a></li>
 						<?php
 					}
 					else{
