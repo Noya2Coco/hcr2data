@@ -24,7 +24,7 @@ include 'sessionChecks.php';
 	<body>
 		
 		<form method="POST" action="" align="center">
-			<p class="form-title">Connection</p>
+			<p class="form-title">Connexion</p>
 			<div class="form-group">
 				<input type="text" name="username" size="20" maxlength="30" autocomplete="off" placeholder="Nom d'utilisateur">
 			</div>
