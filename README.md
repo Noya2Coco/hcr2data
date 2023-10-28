@@ -20,7 +20,7 @@
  - [X] Login page to be able to access sensitive pages
  - [ ] ***(SENSITIVE)*** Suspicious data moderation page
  - [ ] ***(SENSITIVE)*** Moderation page for validated data (entire logs)
-- [ ] Have a domain name
+ - [ ] Have a domain name
 
 ---
 ## Language : <ins>Français</ins>
