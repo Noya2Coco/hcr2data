@@ -1,5 +1,6 @@
 <?php
 include 'sessionChecks.php';
+include_once('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -32,18 +33,66 @@ include 'sessionChecks.php';
 			<table>
 				<tr>
 					<td class="table-title"></td>
-					<td class="table-title">Janvier</td>
-					<td class="table-title">Février</td>
-					<td class="table-title">Mars</td>
-					<td class="table-title">Avril</td>
-					<td class="table-title">Mai</td>
-					<td class="table-title">Juin</td>
-					<td class="table-title">Juillet</td>
-					<td class="table-title">Août</td>
-					<td class="table-title">Septembre</td>
-					<td class="table-title">Octobre</td>
-					<td class="table-title">Novembre</td>
-					<td class="table-title">Décembre</td>
+					<td class="table-title">
+						<?php
+						echo $lang['january'];
+						?>
+					</td>
+					<td class="table-title">
+						<?php
+						echo $lang['february'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['march'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['april'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['may'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['june'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['july'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['august'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['september'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['october'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['november'];
+						?>
+					</td>					
+					<td class="table-title">
+						<?php
+						echo $lang['december'];
+						?>
+					</td>				
 				</tr>
 				<tr>
 			<?php
