@@ -1,5 +1,6 @@
 <?php
 include 'sessionChecks.php';
+include_once('config.php');
 ?>
 
 
@@ -23,14 +24,18 @@ include 'sessionChecks.php';
     
     <body>
         <?php
-        include 'navbar.php';
-        
-        echo "Bienvenu " . ucfirst($_SESSION["username"]) . " !<br>";
-        echo $_SESSION["connected"] ? "Connecté : True<br>" : "Connecté : False<br>";
+			include 'navbar.php';
+			
+			echo $lang['welcome'] . ucfirst($_SESSION["username"]) . " !<br>";
+			echo $_SESSION["connected"] ? "Connecté : True<br>" : "Connecté : False<br>";
+		?>
 
-        ?>
-        
-        <div id="countdown">Temps restant avant la prochaine mise à jour : <span class="countdown important-text">00:00:00</span></div>
+        <div id="countdown">
+			<?php 
+				echo $lang['next_update']; 
+			?>
+			<span class="countdown important-text">00:00:00</span>
+		</div>
         <script src="countdown.js"></script>
         
         <?php
@@ -93,7 +98,7 @@ include 'sessionChecks.php';
         }
         ?>
         
-        <script src="../checkScrollbar.js"></script>';
+        <script src="../checkScrollbar.js"></script>
 
     </body>
 </html>
