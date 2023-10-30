@@ -6,6 +6,9 @@ $lang = array(
 	'nav_previous_months' => 'PREVIOUS MONTHS',
 	'nav_login' => 'LOGIN',
 	'nav_logout' => 'LOGOUT',
+	'nav_export' => 'EXPORT',
+	'nav_waiting_data' => 'WAITING DATA',
+	'nav_all_data' => 'ALL DATA',
 	
 // Home page
 	'welcome' => 'Welcome ',
@@ -26,10 +29,10 @@ $lang = array(
 	'december' => 'December',
 	
 // Connection page
-	'connection' => 'Login',
+	'login' => 'Login',
 	'username' => 'Username',
-	'password' => 'Password'
-	
+	'password' => 'Password',
+	'send' => 'Send'
 	
 	
 	

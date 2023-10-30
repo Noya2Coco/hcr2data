@@ -33,7 +33,7 @@ include_once('config.php');
 					<li>
 						<a href="/includes/login.php">
 							<?php
-							echo $lang['nav_login'];
+								echo $lang['nav_login'];
 							?>
 						</a>
 					</li>
@@ -41,10 +41,27 @@ include_once('config.php');
 				}
 				else {
 					?>
-					<li><a href="#"></a>EXPORTATIONS</li>
-					<li><a href="#">DONNÉES EN ATTENTE</a></li>
-					<li><a href="#">TOUTES LES DONNÉES</a></li>
-					
+					<li>
+						<a href="#">
+							<?php
+								echo $lang['nav_export'];
+							?>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<?php
+								echo $lang['nav_waiting_data'];
+							?>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<?php
+								echo $lang['nav_all_data'];
+							?>
+						</a>
+					</li>
 					<li>
 						<a href="/includes/logout.php">
 							<?php
