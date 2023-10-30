@@ -1,5 +1,6 @@
 <?php
 include 'sessionChecks.php';
+include_once('config.php');
 ?>
 
 
@@ -24,15 +25,32 @@ include 'sessionChecks.php';
 	<body>
 		
 		<form method="POST" action="" align="center">
-			<p class="form-title">Connexion</p>
+			<p class="form-title">
+				<?php
+					echo $lang['login'];
+				?>
+			</p>
+			
 			<div class="form-group">
-				<input type="text" name="username" size="20" maxlength="30" autocomplete="off" placeholder="Nom d'utilisateur">
+				<input type="text" name="username" size="20" maxlength="30" autocomplete="off" placeholder=
+					<?php
+						echo "'" . $lang['username'] . "'";
+					?>
+				>
 			</div>
 			<div class="form-group">
-			<input type="password" name="password" size="12" maxlength="30" autocomplete="off" placeholder="Mot de passe">
+			<input type="password" name="password" size="12" maxlength="30" autocomplete="off" placeholder=
+					<?php
+						echo "'" . $lang['password'] . "'";
+					?>
+				>
 			</div>
 			
-			<button type="submit" name="connexion">Envoyer</button>
+			<button type="submit" name="connexion">
+				<?php
+					echo $lang['send'];
+				?>
+			</button>
 		
 		</form>
 		
