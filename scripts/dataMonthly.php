@@ -12,7 +12,7 @@ include_once('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
         
-        <title>Data : HCR2 | AdventureData</title>
+        <title>HCR2 DATA</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -130,7 +130,7 @@ include_once('config.php');
 					}
 					elseif ($fileYear != $year){
 						while ($fileYear != $year){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 							
 							if ($month == 13){
@@ -142,7 +142,7 @@ include_once('config.php');
 						}
 					
 						while ($fileMonth != $month){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 						}
 
@@ -151,7 +151,7 @@ include_once('config.php');
 					}
 					elseif ($fileMonth != $month){
 						while ($fileMonth != $month){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 						}
 											

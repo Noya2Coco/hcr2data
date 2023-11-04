@@ -12,7 +12,7 @@ $lang = array(
 	
 // Home page
 	'welcome' => 'Bienvenu ',
-	'next_update' => 'Prochaine mise à jour : ',
+	'next_update' => 'Prochaine mise à jour dans : ',
 	
 // Previous Months page
 	'january' => 'Janvier',
@@ -29,6 +29,7 @@ $lang = array(
 	'december' => 'Décembre',
 	
 	'select_month' => 'Sélectionnez un mois',
+	'any_data' => 'Aucune donnée',
 	
 // Connection page
 	'login' => 'Connexion',
