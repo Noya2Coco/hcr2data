@@ -29,6 +29,7 @@ $lang = array(
 	'december' => 'December',
 	
 	'select_month' => 'Select month',
+	'any_data' => 'Any data',
 	
 // Connection page
 	'login' => 'Login',

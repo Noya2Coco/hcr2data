@@ -130,7 +130,7 @@ include_once('config.php');
 					}
 					elseif ($fileYear != $year){
 						while ($fileYear != $year){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 							
 							if ($month == 13){
@@ -142,7 +142,7 @@ include_once('config.php');
 						}
 					
 						while ($fileMonth != $month){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 						}
 
@@ -151,7 +151,7 @@ include_once('config.php');
 					}
 					elseif ($fileMonth != $month){
 						while ($fileMonth != $month){
-							echo '<td class="any-data">Any Data</td>';
+							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
 							$month++;
 						}
 											
