@@ -31,8 +31,8 @@ $lang = array(
 	'select_month' => 'Sélectionnez un mois',
 	
 // Connection page
-	'login' => 'Connection',
-	'username' => "Nom d'utilisateur",
+	'login' => 'Connexion',
+	'username' => 'Nom d\'utilisateur',
 	'password' => 'Mot de passe',
 	'send' => 'Envoyer'
 	
