@@ -28,10 +28,16 @@ include_once('config.php');
 	
 		$folderPath = '../../data/dataMonthly';
 		$files = scandir($folderPath);
-		
+
 		?>
 		<div class="table-container">
 			<table>
+				<caption>
+					<?php
+					echo $lang['select_month'];
+					?>
+				</caption>
+				
 				<tr>
 					<td class="table-title"></td>
 					<td class="table-title">
