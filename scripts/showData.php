@@ -1,12 +1,14 @@
 <?php
+include_once('config.php');
+
 require '../../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 // Chemin vers le fichier Excel
 $chemin_fichier = '../../data/' . $folderAndFilePath[0] . $folderAndFilePath[1];
-$monthList = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-				"Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+$monthList = ["january", "february", "march", "april", "may", "june",
+				"july", "august", "september", "october", "november", "december"];
 
 try
 {
@@ -20,7 +22,7 @@ try
 	$donnees = $worksheet->toArray();
 
 	echo '<div class="table-container"><table><caption>' 
-		. $monthList[(int)substr($folderAndFilePath[1], 3, 2)] 
+		. $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
 		. ' 20' . substr($folderAndFilePath[1], 0, 2) . '</caption>';
 
 	// Boucle pour parcourir les lignes du tableau

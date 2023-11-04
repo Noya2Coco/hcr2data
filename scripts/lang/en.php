@@ -28,13 +28,13 @@ $lang = array(
 	'november' => 'November',
 	'december' => 'December',
 	
+	'select_month' => 'Select month',
+	
 // Connection page
 	'login' => 'Login',
 	'username' => 'Username',
 	'password' => 'Password',
 	'send' => 'Send'
 	
-	
-	
-	
+
 );
