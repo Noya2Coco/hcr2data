@@ -35,14 +35,14 @@ include_once('config.php');
 			<div class="form-group">
 				<input type="text" name="username" size="20" maxlength="30" autocomplete="off" placeholder=
 					<?php
-						echo "'" . $lang['username'] . "'";
+						echo '"'. $lang['username'] . '"';
 					?>
 				>
 			</div>
 			<div class="form-group">
 			<input type="password" name="password" size="12" maxlength="30" autocomplete="off" placeholder=
 					<?php
-						echo "'" . $lang['password'] . "'";
+						echo '"' . $lang['password'] . '"';
 					?>
 				>
 			</div>
