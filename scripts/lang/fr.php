@@ -32,7 +32,7 @@ $lang = array(
 	
 // Connection page
 	'login' => 'Connexion',
-	'username' => 'Nom d\'utilisateur',
+	'username' => "Nom d'utilisateur",
 	'password' => 'Mot de passe',
 	'send' => 'Envoyer'
 	
