@@ -7,6 +7,10 @@ if ($preferredLanguage === 'fr') {
 	$languageFile = 'fr.php';
 }
 
+elseif ($preferredLanguage === 'es') {
+	$languageFile = 'es.php';
+}
+
 include_once('lang/' . $languageFile);
 
 define('CURRENT_LANGUAGE', $preferredLanguage);
