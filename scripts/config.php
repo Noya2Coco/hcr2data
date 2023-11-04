@@ -4,7 +4,7 @@ $preferredLanguage = substr($acceptedLanguages, 0, 2);
 $languageFile = 'en.php';
 
 if ($preferredLanguage === 'fr') {
-	$languageFile = 'en.php';
+	$languageFile = 'fr.php';
 }
 
 include_once('lang/' . $languageFile);
