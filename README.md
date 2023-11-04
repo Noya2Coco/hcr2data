@@ -1,4 +1,4 @@
-# hcr2Adventure : Data Logs of Adventure Ranking
+# hcr2data : Data Logs of Adventure Ranking
 
 ---
 ## Language : <ins>English</ins>
