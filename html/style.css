@@ -167,6 +167,7 @@ table caption {
   font-size: 1.2em;
   font-weight: bold;
   padding: 10px;
+  margin-bottom: 4px;
   background-color: #137C8B;
   color: #fff;
   text-align: center;
@@ -260,6 +261,8 @@ td:hover{
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 1);
+
 }
 
 /* Style de la liste non ordonnée (ul) */
@@ -279,6 +282,7 @@ td:hover{
     white-space: nowrap;
     font-size: 1.30em;
     transition: background-color 0.3s;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 
 }
 

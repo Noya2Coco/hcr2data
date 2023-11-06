@@ -13,7 +13,7 @@ include_once('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
         
-        <title>HCR2 | AdventureData</title>
+        <title>HCR2 DATA</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -39,11 +39,18 @@ include_once('config.php');
 		</div>
         <script src="countdown.js"></script>
         
-        <?php
-        require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
+
+
+<img src="test_graph_script.php" alt="Graphique à barres">
+<?php
+
+	////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////	
+		
+		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
         use PhpOffice\PhpSpreadsheet\IOFactory;
-
+		
         // Chemin vers le fichier Excel
         $chemin_fichier = '../data/logs/adventureData.xlsx';
 
