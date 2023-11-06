@@ -39,11 +39,18 @@ include_once('config.php');
 		</div>
         <script src="countdown.js"></script>
         
-        <?php
-        require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
+
+
+<img src="test_graph_script.php" alt="Graphique à barres">
+<?php
+
+	////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////	
+		
+		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
         use PhpOffice\PhpSpreadsheet\IOFactory;
-
+		
         // Chemin vers le fichier Excel
         $chemin_fichier = '../data/logs/adventureData.xlsx';
 
