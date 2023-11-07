@@ -13,6 +13,7 @@ import dropbox
 import os
 from gestionNullCompteur import chargerCompteur
 
+import makeGraph
 
 
 """
@@ -48,7 +49,7 @@ for fichier in fichiers:
 
 # Créer une image du pseudo et une image du score des 8 joueurs du screen
 def imageCrop():
-    folderPath = "/var/www/DataFromHCR2Adventure/data/screenshots/fullScreenshots"
+    folderPath = "data/screenshots/fullScreenshots"
     files = os.listdir(folderPath)
     
     for fichier in files:
@@ -66,8 +67,8 @@ def imageCrop():
                 pseudoCrop = image.crop(coordsPseudoCrop)
                 scoreCrop = image.crop(coordsScoreCrop)
                 
-                pseudoCrop.save("/var/www/DataFromHCR2Adventure/data/screenshots/pseudoCropped/" + basename + "_(" + str(i) + ")" + ext)
-                scoreCrop.save("/var/www/DataFromHCR2Adventure/data/screenshots/scoreCropped/" + basename + "_(" + str(i) + ")" + ext)
+                pseudoCrop.save("data/screenshots/pseudoCropped/" + basename + "_(" + str(i) + ")" + ext)
+                scoreCrop.save("data/screenshots/scoreCropped/" + basename + "_(" + str(i) + ")" + ext)
                 
                 coordsPseudoCrop[1] += 80
                 coordsPseudoCrop[3] += 80
@@ -87,16 +88,15 @@ def turnImageBlackAndWhite(screenshotPath):
     image = image.convert('L')
     image = image.point(blackOrWhite, '1')
     
-    print(dossier)
     
     # Si c'est un pseudo
     if dossier == "pseudoCropped":
-        tempImagePath = "/var/www/DataFromHCR2Adventure/data/screenshots/tempPseudoCropped/" + basename
+        tempImagePath = "data/screenshots/tempPseudoCropped/" + basename
         image.save(tempImagePath)
     
     # Si c'est un score
     elif dossier == "scoreCropped":
-        tempImagePath = "/var/www/DataFromHCR2Adventure/data/screenshots/tempScoreCropped/" + basename
+        tempImagePath = "data/screenshots/tempScoreCropped/" + basename
         image.save(tempImagePath)
         
     return tempImagePath
@@ -162,7 +162,7 @@ def playersData():
     
     playersName = []
     playersNameScreen = []
-    folderPath = "/var/www/DataFromHCR2Adventure/data/screenshots/pseudoCropped"
+    folderPath = "data/screenshots/pseudoCropped"
     files = os.listdir(folderPath)
     
     for fichier in files:
@@ -184,7 +184,7 @@ def playersData():
     playersScoreScreen = []
     #folderPath = "/var/www/DataFromHCR2Adventure/data/screenshots/scoreCropped"
     # Apparement fonctionne mieux en noir et blanc #
-    folderPath = "/var/www/DataFromHCR2Adventure/data/screenshots/tempScoreCropped"
+    folderPath = "data/screenshots/tempScoreCropped"
 
     files = os.listdir(folderPath)
     
@@ -206,9 +206,9 @@ def playersData():
     playersData = dict(zip(playersName, playersScore))
     playersDataScreen = dict(zip(playersNameScreen, playersScoreScreen))
 
-    print(playersName)
-    print("\n" + str(playersScore))
-    print("\n" + str(playersData))
+    #print(playersName)
+    #print("\n" + str(playersScore))
+    #print("\n" + str(playersData))
     
     #list_players_data = players_data.split("##########")
     list_real_names = [
@@ -298,7 +298,7 @@ def playersData():
 
 
 def dataToSheet(dictPlayersData):
-    excelPath = "/var/www/DataFromHCR2Adventure/data/logs/waitingData.xlsx"
+    excelPath = "data/logs/waitingData.xlsx"
     workbook = openpyxl.load_workbook(excelPath)
     sheet = workbook.active
     
@@ -344,7 +344,7 @@ def dataToSheet(dictPlayersData):
 
 
 def dataScreenToSheet(dictPlayersData):
-    excelPath = "/var/www/DataFromHCR2Adventure/data/logs/waitingScreen.xlsx"
+    excelPath = "data/logs/waitingScreen.xlsx"
     workbook = openpyxl.load_workbook(excelPath)
     sheet = workbook.active
     
@@ -405,10 +405,12 @@ imageCrop()
 playersData, playersDataScreen = playersData()
 
 # excel_filename = "/var/www/DataFromHCR2Adventure/data/logs/adventureData.xlsx"
-excel_filename = "/var/www/DataFromHCR2Adventure/data/logs/waitingData.xlsx"
+excel_filename = "data/logs/waitingData.xlsx"
 
 dataToSheet(playersData)
 dataScreenToSheet(playersDataScreen)
+
+makeGraph.createAllGraph()
 
 
 ###########################################
@@ -420,5 +422,5 @@ dataScreenToSheet(playersDataScreen)
 
 
 # Afficher le dictionnaire de données
-print("Player data :\n"+ str(playersData))
-print("Donnees extraites enregistrees")
+#print("Player data :\n"+ str(playersData))
+#print("Donnees extraites enregistrees")
