@@ -40,13 +40,7 @@ include_once('config.php');
         <script src="countdown.js"></script>
         
 
-
-<img src="test_graph_script.php" alt="Graphique à barres">
-<?php
-
-	////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////	
-		
+		<?php
 		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
         use PhpOffice\PhpSpreadsheet\IOFactory;

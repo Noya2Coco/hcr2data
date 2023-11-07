@@ -7,6 +7,5 @@ else {
 	$filePath = $_GET['filePath'];
 }
 
-include 'navbar.php';
 $folderAndFilePath = ['dataMonthly/', $filePath];
 include 'showData.php';
