@@ -5,8 +5,7 @@
 <!DOCTYPE html>
 <html lang='en'>
     <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4682722806417004"
-    		 crossorigin="anonymous"></script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
@@ -19,9 +18,42 @@
                 favicon.href = "/whiteDatabase.ico";
             }
         </script>
+		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4682722806417004"
+    		 crossorigin="anonymous">
+		</script>
+		
     </head>
 	
 	<body>
+		<?php
+		include 'navbar.php';
+
+		$monthList = ["january", "february", "march", "april", "may", "june",
+						"july", "august", "september", "october", "november", "december"];
+		$graphPath = "/images/graphMonthly/" . pathinfo($folderAndFilePath[1])['filename'] . ".png";
+
+		?>			
+		<div class="table-container">
+			<table>
+				<caption>
+					<?php
+					 echo $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
+							. ' 20' . substr($folderAndFilePath[1], 0, 2)
+					?>
+				</caption>
+				<tr class="row-graph">
+					<td class="cell-graph">
+						<img src=
+							<?php
+								echo "'" . $graphPath . "' alt='Graph'";
+							?>
+						>
+					</td>
+				</tr>
+			</table>
+		</div>
+
 		<?php
 		require '../../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
@@ -29,9 +61,7 @@
 
 		// Chemin vers le fichier Excel
 		$chemin_fichier = '../../data/' . $folderAndFilePath[0] . $folderAndFilePath[1];
-		$monthList = ["january", "february", "march", "april", "may", "june",
-						"july", "august", "september", "october", "november", "december"];
-
+		
 		try
 		{
 			// Charger le fichier Excel

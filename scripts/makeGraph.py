@@ -1,4 +1,7 @@
 import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import make_interp_spline
+
 import pandas as pd
 import os
 
@@ -17,16 +20,18 @@ def whereFileData(fileName):
     
     if fileName in folderContent:
         dataFolderPath = 'data/dataMonthly/'
-        graphFolderPath = 'data/graphMonthly/'
+        graphFolderPath = 'html/images/graphMonthly/'
     else:
         dataFolderPath = 'data/newDataMonthly/'
         graphFolderPath = 'data/newGraphMonthly'
     
     return dataFolderPath, graphFolderPath
     
-
+    
 def createGraph(fileName):
-    dataFolderPath, graphFolderPath = whereFileData(fileName)
+    #dataFolderPath, graphFolderPath = whereFileData(fileName)
+    dataFolderPath = 'data/dataMonthly/'
+    graphFolderPath = 'html/images/graphMonthly/'
     
     allData = pd.read_excel(dataFolderPath + fileName)
     
@@ -43,8 +48,9 @@ def createGraph(fileName):
     markers = ['o', 's', '^', 'v', '>', '<']
     for i in range(len(playersData)) :
         # Crée un graphique linéaire
-        plt.plot(days, playersData[i], marker=markers[i//10],
-            label= players[i], linewidth=2, linestyle='-')
+        plt.plot(days, playersData[i], marker=markers[i//10], markersize=3,
+            label= players[i], linewidth=1, linestyle='-')
+            
 
     # Ajoute un titre et des labels d'axe
     plt.title('Evolution of player scores',fontsize=16)
@@ -72,8 +78,9 @@ def createGraph(fileName):
     newFileName, extension = os.path.splitext(os.path.basename(fileName))
     plt.savefig(graphFolderPath + newFileName, bbox_inches='tight')
 
+    #print("Graph " + fileName + " créé")
     return
-
+    
   
 # Utilitaire pour créer tous les graph manquant parmis les 
 # data du dossier 'dataMonthly'
@@ -81,7 +88,7 @@ def createAllGraph():
     dataFolderPath = 'data/dataMonthly/'
     dataFolderContent = [file.split('.')[0] for file in os.listdir(dataFolderPath) if file.endswith(".xlsx")]
 
-    graphFolderPath = 'data/graphMonthly/'
+    graphFolderPath = 'html/images/graphMonthly/'
     graphFolderContent = [file.split('.')[0] for file in os.listdir(graphFolderPath) if file.endswith(".png")]
     
     for dataFile in dataFolderContent:
@@ -91,4 +98,16 @@ def createAllGraph():
     return
     
     
+def recreateAllGraph():
+    dataFolderPath = 'data/dataMonthly/'
+    dataFolderContent = [file.split('.')[0] for file in os.listdir(dataFolderPath) if file.endswith(".xlsx")]
+
+    for dataFile in dataFolderContent:
+        createGraph(dataFile + '.xlsx')
+    
+    return
+   
+   
 createAllGraph()
+#recreateAllGraph()
+

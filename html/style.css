@@ -197,8 +197,12 @@ tr:nth-child(even){
 	background-color: #F2F2F2;
 }
 
-tr:hover{
+tr:not(.row-graph):hover{
 	background-color: #E1E1E1;
+}
+
+td:not(.cell-graph):hover{
+	background-color: #D0D0D0;
 }
 
 /*.column-1:hover {
@@ -208,9 +212,7 @@ tr:hover{
 	background-color: #E1E1E1;
 }*/
 
-td:hover{
-	background-color: #D0D0D0;
-}
+
 
 .table-title{
 	color: #000000;
