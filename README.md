@@ -22,6 +22,16 @@
  - [ ] ***(SENSITIVE)*** Moderation page for validated data (entire logs)
  - [ ] Have a domain name
 
+### Version history :
+ - Alpha (- -> ~October 10, 2023):
+ Premises of the project, establishment of a general idea and design of a portion of a system allowing the recording of screenshot data.  No visual interface.
+
+ - Beta 0.1 (~October 11, 2023 -> November 5, 2023):
+ Creation of a website, organization of the site, creation of the main ideas, visual implementations, and recording of the first data (collected manually)
+
+ - Beta 0.2 (November 6 -> -):
+ Implementation of visual benefits graph
+
 ---
 ## Language : <ins>Français</ins>
 ***Programme ayant pour but d'enregistrer quotidiennement les données du classement mondial dans la catégorie Aventure du jeu mobile Hill Climb Racing 2.***
@@ -43,4 +53,14 @@
  - [ ] ***( SENSIBLE )*** Page de modération des données suspectes
  - [ ] ***( SENSIBLE )*** Page de modération des données validées (logs entières)
  - [ ] Avoir un nom de domaine
+
+### Historique des versions :
+- Alpha (- -> ~10 Octobre 2023) : 
+Prémisses du projet, établissement d'une idée générale et conception d'une portion d'un système permettant d'enregistrer les données d'un screenshots. Pas d'interface visuelle.
+
+- Bêta 0.1 (~11 Octobre 2023 -> 5 Novembre 2023) :
+Création d'un site internet, organisation du site, création des idées principales, mises en place visuelles, et enregistrement, des premières données (prélevées manuellements)
+
+- Bêta 0.2 (6 Novembre -> -) : 
+Mise en place de graph d'avantages visuels
 
