@@ -32,8 +32,9 @@ include_once('config.php');
 	
 		$folderPath = '../../data/dataMonthly';
 		$files = scandir($folderPath);
-
+		
 		?>
+		
 		<div class="table-container">
 			<table>
 				<caption>
@@ -42,75 +43,66 @@ include_once('config.php');
 					?>
 				</caption>
 				
-				<tr>
-					<td class="table-title"></td>
-					<td class="table-title">
-						<?php
-						echo $lang['january'];
-						?>
-					</td>
-					<td class="table-title">
-						<?php
-						echo $lang['february'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['march'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['april'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['may'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['june'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['july'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['august'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['september'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['october'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['november'];
-						?>
-					</td>					
-					<td class="table-title">
-						<?php
-						echo $lang['december'];
-						?>
-					</td>				
-				</tr>
-				<tr>
 			<?php
+			$chosenPath = "/includes/chosenDataMonthly.php";
 			
-			$year = 20;
-			$month = 0;
+			$nameMonths = ['january', 'february', 'march', 'april', 'may', 'june', 
+				'july', 'august', 'september', 'october', 'november', 'december'];
+			$months = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
 			
+			// Créez une nouvelle liste de noms de fichiers sans extension
+			$filesName = [];
+			foreach ($files as $fileName) {
+				// Utilisez la fonction pathinfo pour extraire le nom de fichier sans extension
+				$filesName[] = pathinfo($fileName, PATHINFO_FILENAME);
+			}
+			
+			// Obtenez les années uniques à partir des noms de fichiers
+			$years = array();
+			foreach ($filesName as $fileName) {
+				if (strpos($fileName, '-') !== false) {
+					list($year, $month) = explode('-', $fileName);
+					$years[$year] = true;
+				}
+			}
+			
+
+			// Créez dynamiquement les entrées du tableau pour chaque année et mois
+			foreach (array_keys($years) as $year) {
+				foreach ($months as $m) {
+					$table[$year][$m] = '•';
+				}
+			}
+
+			// Placez les noms de fichiers existants dans le table
+			foreach ($filesName as $fileName) {
+				if (strpos($fileName, '-') !== false) {
+					list($year, $month) = explode('-', $fileName);
+					$table[$year][$month] = $fileName;
+				}
+			}
+
+			// Générez le table HTML
+			echo '<tr><td class="table-title">' . $lang['month_year'] . '</td>';
+			foreach (array_keys($table) as $year) {
+				echo '<td class="table-title">20' . $year . '</td>';
+			}
+			echo '</tr>';
+			foreach ($months as $m) {
+				echo '<tr><td class="table-title">' . $lang[$nameMonths[intval($m) -1]] . '</td>';
+				foreach (array_keys($table) as $year) {
+					if ($table[$year][$m] === '•'){
+						echo '<td><a class="any-data">' . $table[$year][$m] . '</a></td>';
+					}
+					else{
+						echo '<td><a href=' . $chosenPath . '?filePath=' . $table[$year][$m] . '.xlsx>' . $table[$year][$m] . '</a></td>';
+					}
+				}
+				echo '</tr>';
+			}
+			echo '</table>';
+			?>
+			<!--
 			foreach ($files as $file){			
 				if ($file !== '.' && $file !== '..'){
 					$fileYear = intval(substr($file, 0, 2));
@@ -124,7 +116,7 @@ include_once('config.php');
 					}
 					
 					if ($month == 0){
-						echo '<td class="table-title">20' . $year . '</td>';
+						echo '<td class="table-title">' . '</td>';
 						$month++;
 					}
 					
@@ -170,6 +162,7 @@ include_once('config.php');
 				</tr>
 			</table>
 		</div>
+		-->
 		
 		<script src="../checkScrollbar.js"></script>
 

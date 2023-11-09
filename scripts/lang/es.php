@@ -29,7 +29,8 @@ $lang = array(
 	'december' => 'Diciembre',
 	
 	'select_month' => 'Seleccionar un mes',
-	'any_data' => 'Ninguna dato',
+	'month_year' => 'Mes \ Año',
+	'any_data' => 'N/A',
 	
 // Connection page
 	'login' => 'Conexión',
