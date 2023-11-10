@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['filePath'])){
-	header("Location: /includes/dataMonthly.php");
+	header("Location: /dataMonthly.php");
 	exit;
 }
 else {
