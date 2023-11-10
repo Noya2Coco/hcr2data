@@ -1,11 +1,12 @@
 RewriteEngine On
 
-ErrorDocument 404 /404.php
+ErrorDocument 404 /error404
 
 # Rediriger /nom-du-fichier vers /includes/nom-du-fichier.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)$ /includes/$1.php [L]
 
+# Rediriger /includes/nom-du-fichier.php vers /nom-du-fichier
 RewriteCond %{THE_REQUEST} \s/includes/([^/]+)\.php\s
 RewriteRule ^ /%1 [L,R=301,NE]
 
