@@ -14,7 +14,7 @@ include_once('config.php');
 		</li>
 
 		<li>
-			<a href="/includes/dataMonthly.php">
+			<a href="/dataMonthly">
 				<?php
 				echo $lang['nav_previous_months'];
 				?>
