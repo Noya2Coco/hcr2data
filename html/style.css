@@ -38,6 +38,14 @@ body {
 	user-select: none;
 }
 
+.error_container{
+	text-align: center;
+	padding: 50px;
+}
+
+.error{
+	color: #d9534f;
+}
 
 /* Pour surligner une cellule d'un tableau en jaune */
 .important-text {
@@ -72,6 +80,10 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s;
+}
+
+.button-outside-form a{
+	color: #fff;
 }
 
 .button-outside-form:hover{

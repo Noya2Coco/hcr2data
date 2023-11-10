@@ -36,7 +36,12 @@ $lang = array(
 	'login' => 'Connexion',
 	'username' => "Nom d'utilisateur",
 	'password' => 'Mot de passe',
-	'send' => 'Envoyer'
+	'send' => 'Envoyer',
 	
+// Error 404 page
+	'title_page_not_found' => 'Page non trouvée',
+	'error_404' => 'Erreur 404',
+	'page_not_found' => 'La page que vous recherchez n\'a pas pu être trouvée.',
+	'back_to_home_page' => 'Retour à la page d\'accueil'
 
 );

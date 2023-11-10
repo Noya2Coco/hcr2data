@@ -44,7 +44,7 @@ include_once('config.php');
 				</caption>
 				
 			<?php
-			$chosenPath = "/includes/chosenDataMonthly.php";
+			$chosenPath = "/chosenDataMonthly";
 			
 			$nameMonths = ['january', 'february', 'march', 'april', 'may', 'june', 
 				'july', 'august', 'september', 'october', 'november', 'december'];
@@ -102,67 +102,6 @@ include_once('config.php');
 			}
 			echo '</table>';
 			?>
-			<!--
-			foreach ($files as $file){			
-				if ($file !== '.' && $file !== '..'){
-					$fileYear = intval(substr($file, 0, 2));
-					$fileMonth = intval(substr($file, 3, 5));
-					$chosenPath = "/includes/chosenDataMonthly.php";
-					
-					if ($month == 13){
-						$year++;
-						$month = 0;
-						echo '</tr><tr>';
-					}
-					
-					if ($month == 0){
-						echo '<td class="table-title">' . '</td>';
-						$month++;
-					}
-					
-					if ($fileYear == $year && $fileMonth == $month){
-						echo '<td><a href=' . $chosenPath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
-						$month++;
-					}
-					elseif ($fileYear != $year){
-						while ($fileYear != $year){
-							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
-							$month++;
-							
-							if ($month == 13){
-								echo '</tr><tr>';
-								$year++;
-								echo '<td class="table-title">20' . $year . '</td>';
-								$month = 1;
-							}
-						}
-					
-						while ($fileMonth != $month){
-							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
-							$month++;
-						}
-
-						echo '<td><a href=' . $chosenPath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
-						$month++;
-					}
-					elseif ($fileMonth != $month){
-						while ($fileMonth != $month){
-							echo '<td class="any-data">' . $lang['any_data'] . '</td>';
-							$month++;
-						}
-											
-						echo '<td><a href=' . $chosenPath . '?filePath=' . $file . '>' . str_replace(".xlsx", "", $file) . '</td>';
-						$month++;
-					}
-				}
-			}
-			
-			?>
-			
-				</tr>
-			</table>
-		</div>
-		-->
 		
 		<script src="../checkScrollbar.js"></script>
 

@@ -25,7 +25,7 @@ include_once('config.php');
 		if (!$_SESSION["connected"]) {
 			?>
 			<li>
-				<a href="/includes/login.php">
+				<a href="/login">
 					<?php
 						echo $lang['nav_login'];
 					?>
@@ -57,7 +57,7 @@ include_once('config.php');
 				</a>
 			</li>
 			<li>
-				<a href="/includes/logout.php">
+				<a href="/logout">
 					<?php
 					echo $lang['nav_logout'];
 					?>
