@@ -13,7 +13,7 @@ include_once('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
         
-        <title>HCR2 DATA</title>
+        <title>Hcr2 Data</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -39,6 +39,10 @@ include_once('config.php');
 		</div>
         <script src="countdown.js"></script>
         
+		<!-- Initial : width="560" height="315" -->
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/C_TdUJ1VPOM?si=EbTXA7lGFCjztIvy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
 
 		<?php
 		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer

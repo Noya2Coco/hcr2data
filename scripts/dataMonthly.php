@@ -11,7 +11,7 @@ include_once('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
         
-        <title>HCR2 DATA</title>
+        <title>Hcr2 Data</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -95,7 +95,7 @@ include_once('config.php');
 						echo '<td><a class="any-data">' . $table[$year][$m] . '</a></td>';
 					}
 					else{
-						echo '<td><a href=' . $chosenPath . '?filePath=' . $table[$year][$m] . '.xlsx>' . $table[$year][$m] . '</a></td>';
+						echo '<td><a href=' . $chosenPath . '?month=' . $table[$year][$m] . '>' . $table[$year][$m] . '</a></td>';
 					}
 				}
 				echo '</tr>';
