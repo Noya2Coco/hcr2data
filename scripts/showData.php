@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/style.css">
         
-        <title>HCR2 DATA</title>
+        <title>Hcr2 Data</title>
         <link rel="icon" href="/blackDatabase.ico" type="image/x-icon">
         <script>
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -31,28 +31,27 @@
 
 		$monthList = ["january", "february", "march", "april", "may", "june",
 						"july", "august", "september", "october", "november", "december"];
-		$graphPath = "/images/graphMonthly/" . pathinfo($folderAndFilePath[1])['filename'] . ".png";
 
-		?>			
+		?>	
+
 		<div class="table-container">
 			<table>
 				<caption>
 					<?php
 					 echo $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
-							. ' 20' . substr($folderAndFilePath[1], 0, 2)
+							. ' 20' . substr($folderAndFilePath[1], 0, 2);
 					?>
 				</caption>
 				<tr class="row-graph">
 					<td class="cell-graph">
-						<img src=
 							<?php
-								echo "'" . $graphPath . "' alt='Graph'";
+							echo "<img src=/includes/graphRedirect.php?image=" . pathinfo($folderAndFilePath[1])['filename'] . ".png alt='Image restreinte'>";
 							?>
-						>
 					</td>
 				</tr>
 			</table>
-		</div>
+		</div>		
+				
 
 		<?php
 		require '../../vendor/autoload.php'; // Inclure l'autoloader de Composer
