@@ -1,6 +1,7 @@
 <?php
 
 $languageFile = 'en.php';
+$preferredLanguage = 'en';
 
 if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
 	$acceptedLanguages = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
