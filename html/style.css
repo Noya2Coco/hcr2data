@@ -71,11 +71,11 @@ body {
 }
 
 .video-container {
-        width: 60%;
-        max-width: 896px; /* Ajustez cette valeur en fonction de la largeur maximale souhaitée */
-        margin: auto; /* Centre le conteneur */
-        aspect-ratio: 16 / 9; /* Ratio d'aspect 16:9 */
-    }
+	width: 60%;
+	max-width: 896px; /* Ajustez cette valeur en fonction de la largeur maximale souhaitée */
+	margin: auto; /* Centre le conteneur */
+	aspect-ratio: 16 / 9; /* Ratio d'aspect 16:9 */
+}
 
 .video-container iframe {
 	width: 100%;

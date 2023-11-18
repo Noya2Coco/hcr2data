@@ -41,7 +41,7 @@ include_once('config.php');
         
 		<!-- Initial : width="560" height="315" -->
 		<div class="video-container">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/C_TdUJ1VPOM?si=EbTXA7lGFCjztIvy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/C_TdUJ1VPOM?autoplay=1&controls=0&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&color=white" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>
 
 		<?php
