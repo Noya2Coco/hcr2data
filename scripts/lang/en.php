@@ -13,6 +13,8 @@ $lang = array(
 // Home page
 	'welcome' => 'Welcome ',
 	'next_update' => 'Next update in: ',
+	'the_news' => 'The news',
+	'the_last_5_days' => 'The last 5 days',
 	
 // Previous Months page
 	'january' => 'January',

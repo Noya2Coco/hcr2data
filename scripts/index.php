@@ -39,11 +39,21 @@ include_once('config.php');
 		</div>
         <script src="countdown.js"></script>
         
-		<!-- Initial : width="560" height="315" -->
-		<div class="video-container">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/C_TdUJ1VPOM?autoplay=1&controls=0&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&color=white" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<div class="news-container">
+			<div class="video-container">
+				<?php
+					echo '<p>' . $lang['the_news'] . '</p>';
+				?>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/C_TdUJ1VPOM?autoplay=1&controls=0&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&color=white" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
+			<div class="graph-container">
+				<?php
+					echo '<p>' . $lang['the_last_5_days'] . '</p>';
+				?>
+				ajouter un graph
+			</div>
 		</div>
-
+		
 		<?php
 		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
