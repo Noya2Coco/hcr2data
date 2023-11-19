@@ -4,6 +4,7 @@ from scipy.interpolate import make_interp_spline
 
 import pandas as pd
 import os
+from datetime import datetime
 
 from matplotlib.ticker import FuncFormatter
 
@@ -15,23 +16,23 @@ def millions(x, pos):
 
 
 def whereFileData(fileName):
-    folderTest = 'data/dataMonthly/'
+    folderTest = '../data/dataMonthly/'
     folderContent = os.listdir(folderTest)
     
     if fileName in folderContent:
-        dataFolderPath = 'data/dataMonthly/'
-        graphFolderPath = 'html/images/graphMonthly/'
+        dataFolderPath = '../data/dataMonthly/'
+        graphFolderPath = '../data/graphMonthly/'
     else:
-        dataFolderPath = 'data/newDataMonthly/'
-        graphFolderPath = 'data/newGraphMonthly'
+        dataFolderPath = '../data/newDataMonthly/'
+        graphFolderPath = '../data/newGraphMonthly/'
     
     return dataFolderPath, graphFolderPath
     
     
-def createGraph(fileName):
+def createGraph(fileName, lastDays = False, notAllDays = False):
     #dataFolderPath, graphFolderPath = whereFileData(fileName)
-    dataFolderPath = 'data/dataMonthly/'
-    graphFolderPath = 'html/images/graphMonthly/'
+    dataFolderPath = '../data/dataMonthly/'
+    graphFolderPath = '../data/graphMonthly/'
     
     allData = pd.read_excel(dataFolderPath + fileName)
     
@@ -41,9 +42,20 @@ def createGraph(fileName):
        
     for i in range(1, len(allData)):
         playersData.append(allData.iloc[i, 1:].tolist())
-
+        
+    if notAllDays == True:
+        newPlayersData = []
+        days = days[(len(playersData[0]) - 5):]
+        for i in playersData:
+            newPlayersData.append(playerData[(len(playersData[0]) - 5):])
+        playersData = newPlayersData
+    
+    if len(players) >10:
+        playersData = playersData[:10]
+        players = players[:10]
+                
+                
     plt.figure(figsize=(10, 6))
-
 
     markers = ['o', 's', '^', 'v', '>', '<']
     for i in range(len(playersData)) :
@@ -75,20 +87,25 @@ def createGraph(fileName):
     plt.grid(True, linestyle='--', alpha=0.6)
         
         
+    if lastDays == True:
+        graphFolderPath += 'lastDays/'
+        fileName = 'lastDay.xlsx'
+        #fileName = datetime.now().strftime("%y-%m-%d") + '.xlsx'
+        
     newFileName, extension = os.path.splitext(os.path.basename(fileName))
     plt.savefig(graphFolderPath + newFileName, bbox_inches='tight')
 
     #print("Graph " + fileName + " créé")
     return
-    
-  
+   
+   
 # Utilitaire pour créer tous les graph manquant parmis les 
 # data du dossier 'dataMonthly'
 def createAllGraph():
-    dataFolderPath = 'data/dataMonthly/'
+    dataFolderPath = '../data/dataMonthly/'
     dataFolderContent = [file.split('.')[0] for file in os.listdir(dataFolderPath) if file.endswith(".xlsx")]
 
-    graphFolderPath = 'html/images/graphMonthly/'
+    graphFolderPath = '../data/graphMonthly/'
     graphFolderContent = [file.split('.')[0] for file in os.listdir(graphFolderPath) if file.endswith(".png")]
     
     for dataFile in dataFolderContent:
@@ -98,8 +115,33 @@ def createAllGraph():
     return
     
     
+def createLastDaysGraph():
+    folder = '../data/dataMonthly/'
+    allFiles = [file for file in os.listdir(folder) if os.path.isfile(os.path.join(folder, file))]
+
+
+    lastFile = allFiles[-1]
+    lastDaysData = []
+        
+    allData = pd.read_excel(folder + lastFile)
+    days = allData.iloc[0, 1:].tolist()
+    
+    nbDays = 0
+    if len(days) >= 5:
+        createGraph(lastFile, lastDays = True, notAllDays = True)
+    else:
+        createGraph(lastFile, lastDays = True)
+        
+    
+    #print(len(pd.read_excel(folder + lastFile)['Zorro']))
+    #print(pd.read_excel(folder + lastFile)['Zorro'])
+
+    
+
+
+    
 def recreateAllGraph():
-    dataFolderPath = 'data/dataMonthly/'
+    dataFolderPath = '../data/dataMonthly/'
     dataFolderContent = [file.split('.')[0] for file in os.listdir(dataFolderPath) if file.endswith(".xlsx")]
 
     for dataFile in dataFolderContent:
@@ -108,6 +150,7 @@ def recreateAllGraph():
     return
    
    
+createLastDaysGraph()
 createAllGraph()
 #recreateAllGraph()
 
