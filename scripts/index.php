@@ -26,9 +26,6 @@ include_once('config.php');
     <body>
         <?php
 			include 'navbar.php';
-			
-			echo $lang['welcome'] . ucfirst($_SESSION["username"]) . " !<br>";
-			echo $_SESSION["connected"] ? "Connecté : True<br>" : "Connecté : False<br>";
 		?>
 
         <div id="countdown">
@@ -48,13 +45,20 @@ include_once('config.php');
 			</div>
 			<div class="graph-container">
 				<?php
-					echo '<p>' . $lang['the_last_5_days'] . '</p>';
+					echo '<p>' . $lang['the_last_days'] . '</p>';
 				?>
-				ajouter un graph
+				<img src="/includes/graphRedirect.php?image=lastDay.png" alt='Graph of the last 5 days'>
+
 			</div>
 		</div>
 		
 		<?php
+		
+		echo '<br><br><br><br><br><br><br><br><br><br>';
+		echo $lang['welcome'] . ucfirst($_SESSION["username"]) . " !<br>";
+		echo $_SESSION["connected"] ? "Connecté : True<br>" : "Connecté : False<br>";
+		
+		
 		require '../vendor/autoload.php'; // Inclure l'autoloader de Composer
 
         use PhpOffice\PhpSpreadsheet\IOFactory;

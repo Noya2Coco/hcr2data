@@ -14,7 +14,7 @@ $lang = array(
 	'welcome' => 'Welcome ',
 	'next_update' => 'Next update in: ',
 	'the_news' => 'The news',
-	'the_last_5_days' => 'The last 5 days',
+	'the_last_days' => 'The last days',
 	
 // Previous Months page
 	'january' => 'January',

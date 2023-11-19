@@ -14,7 +14,7 @@ $lang = array(
 	'welcome' => 'Bienvenu ',
 	'next_update' => 'Prochaine mise à jour dans : ',
 	'the_news' => 'Les actualités',
-	'the_last_5_days' => 'Les 5 derniers jours',
+	'the_last_days' => 'Les derniers jours',
 	
 // Previous Months page
 	'january' => 'Janvier',

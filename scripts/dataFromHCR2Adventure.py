@@ -411,6 +411,7 @@ dataToSheet(playersData)
 dataScreenToSheet(playersDataScreen)
 
 makeGraph.createAllGraph()
+makeGraph.createLastDaysGraph()
 
 
 ###########################################
