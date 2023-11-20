@@ -1,4 +1,7 @@
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib.ticker import FuncFormatter
+
 import numpy as np
 from scipy.interpolate import make_interp_spline
 
@@ -6,7 +9,6 @@ import pandas as pd
 import os
 from datetime import datetime
 
-from matplotlib.ticker import FuncFormatter
 
 
 
@@ -33,7 +35,7 @@ def createGraph(fileName, lastDays = False, notAllDays = False):
     #dataFolderPath, graphFolderPath = whereFileData(fileName)
     dataFolderPath = '../data/dataMonthly/'
     graphFolderPath = '../data/graphMonthly/'
-    
+
     allData = pd.read_excel(dataFolderPath + fileName)
     
     players = allData.iloc[1:, 0].tolist()
@@ -46,6 +48,7 @@ def createGraph(fileName, lastDays = False, notAllDays = False):
     if notAllDays == True:
         newPlayersData = []
         days = days[(len(playersData[0]) - 5):]
+                   
         for i in playersData:
             newPlayersData.append(playerData[(len(playersData[0]) - 5):])
         playersData = newPlayersData
@@ -53,7 +56,16 @@ def createGraph(fileName, lastDays = False, notAllDays = False):
     if len(players) >10:
         playersData = playersData[:10]
         players = players[:10]
+             
+    if lastDays == True:
+        fileMonth = fileName[3:5]
+        
+        for i in range(len(days)):
+            days[i] = str(fileMonth) + '-' + str(days[i])    
+            print(days[i])
                 
+        # Convertir les chaînes de dates en objets datetime
+        days = [mdates.datestr2num(day) for day in days]     
                 
     plt.figure(figsize=(10, 6))
 
@@ -69,6 +81,9 @@ def createGraph(fileName, lastDays = False, notAllDays = False):
     plt.xlabel('Days', fontsize=12)
     plt.ylabel('Number of stars', fontsize=12)
 
+    # Formater l'axe des ordonnées avec des jours et des mois
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m-%d'))
+    
     # Personnalisation des axes
     plt.xticks(fontsize=10)
     plt.yticks(fontsize=10)

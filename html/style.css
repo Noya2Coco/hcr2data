@@ -99,12 +99,12 @@ body {
 
 
 /* Style pour la div des news */
-.news-container{
+.news-container, .showGraph, .showTable {
 	display: flex;
     flex-wrap: wrap;
 }
 
-.news-container p{
+.video-container p, .graph-container p, .table-container p{
 	font-size: 1.2em;
 	font-weight: bold;
 	padding: 10px;
@@ -118,22 +118,28 @@ body {
 }
 
 
-.video-container, .graph-container {
-	width: 60%;
+.video-container, .graph-container, .table-container {
+	width: 80%;
 	max-width: 700px; 
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 20px;
 	aspect-ratio: 16 / 9; /* 16:9 */
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.video-container iframe, .graph-container img {    
+.showGraph .graph-container, .showTable .table-container {
+	width: 80%;
+	max-width: 900px;
+}
+
+.video-container iframe, .graph-container img, .table-container table {    
 	width: 95%;
 	height: 95%;
-	margin-bottom: 10px;
-	object-fit: cover;
+	margin: 10px auto;
+	margin-bottom: 15px;
+	/*object-fit: cover;*/
 }
 
 
@@ -301,11 +307,11 @@ td:not(.cell-graph):hover{
 	color: #344D59;
 }
 
-.table-container {
-	width: 100%;
-	overflow-x: auto;
-	display: flex;
-	align-items: center;
+.table-container img {
+	width: 95%;
+	height: 95%;
+	margin-bottom: 10px;
+	object-fit: cover;
 }
 
 .align-left{
@@ -355,6 +361,7 @@ td:not(.cell-graph):hover{
 /* Style des éléments de la liste (li) */
 .navbar li {
     display: inline;
+	font-weight: bold;
     background-color: rgba(10, 124, 141, 0.3);
     padding: 8px;
     margin-left: 3px;
@@ -365,6 +372,11 @@ td:not(.cell-graph):hover{
     transition: background-color 0.3s;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 
+}
+
+.navbar .active{
+	background-color: rgba(10, 124, 141, 0.7);
+;
 }
 
 @media screen and (max-width: 1401px) and (min-width: 1200px) {

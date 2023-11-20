@@ -77,6 +77,8 @@ include_once('config.php');
             // Récupérer les données de la feuille de calcul
             $donnees = $worksheet->toArray();
 
+
+/*
             echo '<div class="table-container"><table>';
 
             // Boucle pour parcourir les lignes du tableau
@@ -109,7 +111,9 @@ include_once('config.php');
             }
 
             echo '</table></div>';
-            
+*/
+
+
         } 
 
         catch (Exception $e) 
