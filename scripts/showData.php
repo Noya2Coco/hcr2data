@@ -33,25 +33,16 @@
 						"july", "august", "september", "october", "november", "december"];
 
 		?>	
-
-		<div class="table-container">
-			<table>
-				<caption>
-					<?php
-					 echo $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
-							. ' 20' . substr($folderAndFilePath[1], 0, 2);
-					?>
-				</caption>
-				<tr class="row-graph">
-					<td class="cell-graph">
-							<?php
-							echo "<img src=/includes/graphRedirect.php?image=" . pathinfo($folderAndFilePath[1])['filename'] . ".png alt='Image restreinte'>";
-							?>
-					</td>
-				</tr>
-			</table>
-		</div>		
-				
+		
+		<div class="showGraph">
+			<div class="graph-container">
+				<?php
+					echo '<p>' . $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
+						. ' 20' . substr($folderAndFilePath[1], 0, 2) . '</p>';
+					echo '<img src=/includes/graphRedirect.php?image=' . pathinfo($folderAndFilePath[1])['filename'] . '.png alt="Graph month data">';
+				?>
+			</div>
+		</div>
 
 		<?php
 		require '../../vendor/autoload.php'; // Inclure l'autoloader de Composer
@@ -71,10 +62,14 @@
 
 			// Récupérer les données de la feuille de calcul
 			$donnees = $worksheet->toArray();
-
-			echo '<div class="table-container"><table><caption>' 
-				. $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]] 
-				. ' 20' . substr($folderAndFilePath[1], 0, 2) . '</caption>';
+			
+			?>
+			<div class="showTable">
+				<div class="table-container">
+					<?php
+					echo '<p>' . $lang[$monthList[(int)substr($folderAndFilePath[1], 3, 2) -1]]
+						. ' 20' . substr($folderAndFilePath[1], 0, 2) . '</p>'
+						. '<table>';
 
 			// Boucle pour parcourir les lignes du tableau
 			foreach ($donnees as $rowIndex => $row) {
@@ -105,10 +100,13 @@
 				echo '</tr>';
 			}
 
-			echo '</table></div>';
+			?>
+					</table>
+				</div>
+			</div>
 			
-			echo '<script src="../checkScrollbar.js"></script>';
-			
+			<script src="../checkScrollbar.js"></script>
+			<?php
 		} 
 
 		catch (Exception $e) 
