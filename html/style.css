@@ -23,148 +23,160 @@
 
 
 body {
-	font-size: 18px;
-	color: #333;
-	margin-bottom: 15px;
-	margin-top: 0;
-	font-family: 'Helvetica', sans-serif;
-	
-	/* Empêcher la sélection de texte sur les navigateurs */
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 0;
+    font-family: 'Helvetica', sans-serif;
+    
+    /* Empêcher la sélection de texte sur les navigateurs */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .error_container{
-	text-align: center;
-	padding: 50px;
+    text-align: center;
+    padding: 50px;
 }
 
 .error{
-	color: #d9534f;
+    color: #d9534f;
 }
 
 /* Pour surligner une cellule d'un tableau en jaune */
 .important-text {
-	background-color: #B8CBD0;
+    background-color: #B8CBD0;
 }
 
 /* Pour surligner une cellule d'un tableau en noir */
 .black-text {
-	background-color: black;
+    background-color: black;
 }
 
 .any-data{
-	color: rgba(10, 124, 141, 0.3);
+    color: rgba(10, 124, 141, 0.3);
 }
 
 /* Pour le compteur (temps avant la prochaine mise à jour) */
 #countdown {
-	position: fixed;
-	bottom: 10px;
-	left: 10px;
-	
-	font-size: 2.5vw;
-	
-	@media (min-width: 550px) and (max-width: 800px){
-		font-size: 2vw;
-	}
-	
-	@media (min-width: 800px) {
-		font-size: 1em; 
-	}
-	
-	font-weight: bold;
-	padding: 10px;
-	text-align: center;
-	border-radius: 10px;
-	color: #fff;
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-	background-color: #709CA7;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+
+    font-size: 2.5vw;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+    background-color: #709CA7;
 }
-  
-#countdown .countdown{	
-	padding: 4px;
-	background-color: rgba(10, 124, 141, 0.3);
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-	border-radius: 5px;
+
+@media (min-width: 550px) and (max-width: 800px){
+    #countdown{
+        font-size: 2vw;
+    }
 }
-	
+
+@media (min-width: 800px) {
+    #countdown{
+        font-size: 1em;
+    }
+}
+
+
+#countdown .countdown{
+    padding: 4px;
+    background-color: rgba(10, 124, 141, 0.3);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 ::placeholder{
-	color: #777;
+    color: #777;
 }
 
 
 /* Style pour la div des news */
 .news-container, .showGraph, .showTable {
-	display: flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
 .video-container p, .graph-container p, .table-container p{
-	font-size: 1.2em;
-	font-weight: bold;
-	padding: 10px;
-	margin: 10px;
-	margin-bottom: 10px;
-	background-color: #137C8B;
-	color: #fff;
-	text-align: center;
-	border-radius: 10px;
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    background-color: #137C8B;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 768px) {
+    .table-container table,
+    .video-container p, .graph-container p, .table-container p,
+    .navbar a {
+        font-size: 3vw;
+    }
+}
 
 .video-container, .graph-container, .table-container {
-	width: 80%;
-	max-width: 700px; 
-	margin: auto;
-	margin-top: 20px;
-	aspect-ratio: 16 / 9; /* 16:9 */
-	text-align: center;
-	border-radius: 10px;
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 20px;
+    aspect-ratio: 16 / 9; /* 16:9 */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);  
 }
 
 .showGraph .graph-container, .showTable .table-container {
-	width: 80%;
-	max-width: 900px;
+    width: 90%;
+    max-width: 900px;
 }
 
-.video-container iframe, .graph-container img, .table-container table {    
-	width: 95%;
-	height: 95%;
-	margin: 10px auto;
-	margin-bottom: 15px;
-	/*object-fit: cover;*/
+.video-container iframe, .graph-container img, .table-container table {
+    width: 95%;
+    max-width: 95%;
+    height: 95%;
+    margin: 10px auto;
+    margin-bottom: 15px;
+    /*object-fit: cover;*/
 }
 
 
 
 /* Style de tous les boutons hors formulaire */
 .button-outside-form{
-	padding: 10px 20px;
-	background-color: #709CA7;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+    padding: 10px 20px;
+    background-color: #709CA7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .button-outside-form a{
-	color: #fff;
+    color: #fff;
 }
 
 .button-outside-form:hover{
-	background-color: #137C8B;
+    background-color: #137C8B;
 }
 
 .button-outside-form:active{
-	background-color: #344D59;
+    background-color: #344D59;
 }
 
 
@@ -174,58 +186,58 @@ body {
 
 /* Style pour les formulaire et leurs éléments */
 form{
-	width: 300px;
-	margin: 0 auto;
-	padding: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	background-color: #F4F4F4;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #F4F4F4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-group{
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .form-title{
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /* Style de tous les boutons dans les formulaires */
 form button,form input[type="button"],form input[type="submit"]{
-	width: 100%;
-	padding: 10px;
-	background-color: #709CA7;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+    width: 100%;
+    padding: 10px;
+    background-color: #709CA7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 form button:hover,form input[type="button"]:hover,form input[type="submit"]:hover{
-	background-color: #137C8B;
+    background-color: #137C8B;
 }
 
 form button:active,form input[type="button"]:active,form input[type="submit"]:active{
-	background-color: #344D59;
+    background-color: #344D59;
 }
 
 /* Style pour les inputs dans les formulaires */
 input[type="text"], input[type="password"], textarea, select{
-	width: calc(100% - 20px);
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	transition: box-shadow 1s;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: box-shadow 1s;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
-	border-color: #007BFF;
-	outline: none;
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* ############################################ *
@@ -237,37 +249,37 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:f
 /* ######################################### *
  * STYLE POUR LES TABLEAUX ET LEURS ELEMENTS *
  * ######################################### */
- 
+
 /* Style des tableaux */
 table{
-	border-collapse: collapse;
-	width: 80%;
-	margin: 15px;
-	border-radius: 10px;
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
-	white-space: nowrap;
+    border-collapse: collapse;
+    width: 60%;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
 }
 
 table caption {
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 10px;
-  margin-bottom: 4px;
-  background-color: #137C8B;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 4px;
+    background-color: #137C8B;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
 }
 
 th{
-	background-color: #007BFF;
-	color: #fff;
+    background-color: #007BFF;
+    color: #fff;
 }
 
 th, td{
-	text-align: center;
-	padding: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 tr, td {
@@ -275,54 +287,52 @@ tr, td {
 }
 
 td {
-	color: #709CA7;
+    color: #709CA7;
 }
 
 tr:nth-child(even){
-	background-color: #F2F2F2;
+    background-color: #F2F2F2;
 }
 
 tr:not(.row-graph):hover{
-	background-color: #E1E1E1;
+    background-color: #E1E1E1;
 }
 
 td:not(.cell-graph):hover{
-	background-color: #D0D0D0;
+    background-color: #D0D0D0;
 }
 
 /*.column-1:hover {
-	.column-1 {
-		background-color: #E1E1E1;
-	}
-	background-color: #E1E1E1;
+        .column-1 {
+                background-color: #E1E1E1;
+        }
+        background-color: #E1E1E1;
 }*/
 
-
-
 .table-title{
-	color: #000000;
+    color: #000000;
 }
 
 .table-date {
-	color: #344D59;
+    color: #344D59;
 }
 
 .table-container img {
-	width: 95%;
-	height: 95%;
-	margin-bottom: 10px;
-	object-fit: cover;
+    width: 95%;
+    height: 95%;
+    margin-bottom: 10px;
+    object-fit: cover;
 }
 
 .align-left{
-	justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 /*
 @media screen and (min-width: 768px) {
-	.table-container {
-		justify-content: center;
-	}
+        .table-container {
+                justify-content: center;
+        }
 }
 */
 
@@ -348,7 +358,7 @@ td:not(.cell-graph):hover{
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 1);
 
 }
 
@@ -361,7 +371,7 @@ td:not(.cell-graph):hover{
 /* Style des éléments de la liste (li) */
 .navbar li {
     display: inline;
-	font-weight: bold;
+    font-weight: bold;
     background-color: rgba(10, 124, 141, 0.3);
     padding: 8px;
     margin-left: 3px;
@@ -375,65 +385,65 @@ td:not(.cell-graph):hover{
 }
 
 .navbar .active{
-	background-color: rgba(10, 124, 141, 0.7);
-;
+    background-color: rgba(10, 124, 141, 0.7);
+    ;
 }
 
 @media screen and (max-width: 1401px) and (min-width: 1200px) {
-	.navbar{
-		padding: 7px;
-	}
-	
-	.navbar li{
-		padding: 7px;
-		font-size: 1.15em;
-	}
+    .navbar{
+        padding: 7px;
+    }
+
+    .navbar li{
+        padding: 7px;
+        font-size: 1.15em;
+    }
 }
 
 /* Changements des tailles de la navbar en fonction de la taille de l'écran */
 @media screen and (max-width: 700px){
-	.navbar{
-		padding: 6px;
-	}
-	
-	.navbar li{
-		padding: 6px;
-		font-size: 1em;
-	}
+    .navbar{
+        padding: 6px;
+    }
+
+    .navbar li{
+        padding: 6px;
+        font-size: 1em;
+    }
 }
 
 /* Autres tailles
 @media screen and (max-width: 1001px) and (min-width: 800px) {
-	.navbar{
-		padding: 5px;
-	}
-	
-	.navbar li{
-		padding: 5px;
-		font-size: 0.80em;
-	}
+        .navbar{
+                padding: 5px;
+        }
+        
+        .navbar li{
+                padding: 5px;
+                font-size: 0.80em;
+        }
 }
 
 @media screen and (max-width: 801px) and (min-width: 600px) {
-	.navbar{
-		padding: 4px;
-	}
-	
-	.navbar li{
-		padding: 4px;
-		font-size: 0.60em;
-	}
+        .navbar{
+                padding: 4px;
+        }
+        
+        .navbar li{
+                padding: 4px;
+                font-size: 0.60em;
+        }
 }
 
 @media screen and (max-width: 601px) {
-	.navbar{
-		padding: 3px;
-	}
-	
-	.navbar li{
-		padding: 3px;
-		font-size: 0.40em;
-	}
+        .navbar{
+                padding: 3px;
+        }
+        
+        .navbar li{
+                padding: 3px;
+                font-size: 0.40em;
+        }
 }*/
 
 
@@ -443,7 +453,7 @@ td:not(.cell-graph):hover{
 }
 
 .navbar li:active {
-	background-color: #344D59;
+    background-color: #344D59;
 }
 
 /* Style des liens (a) */
@@ -459,8 +469,8 @@ td:not(.cell-graph):hover{
 
 
 a {
-	text-decoration: none;
-	color: #709CA7;
+    text-decoration: none;
+    color: #709CA7;
 }
 
 
