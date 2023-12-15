@@ -48,6 +48,7 @@ include_once('config.php');
 
         use PhpOffice\PhpSpreadsheet\IOFactory;
 
+        
 // Chemin vers le fichier Excel
         $chemin_fichier = '../../data/' . $folderAndFilePath[0] . $folderAndFilePath[1];
 
@@ -61,46 +62,90 @@ include_once('config.php');
             // Récupérer les données de la feuille de calcul
             $donnees = $worksheet->toArray();
             ?>
-            <div class="showTable">
+        
+        <!--
+            <div class="showTable computer">
                 <div class="table-container">
-            <?php
-            echo '<p>' . $lang[$monthList[(int) substr($folderAndFilePath[1], 3, 2) - 1]]
-            . ' 20' . substr($folderAndFilePath[1], 0, 2) . '</p>'
-            . '<table>';
+            
+                    <?php /*
+                    echo '<p>' . $lang[$monthList[(int) substr($folderAndFilePath[1], 3, 2) - 1]]
+                    . ' 20' . substr($folderAndFilePath[1], 0, 2) . '</p>'
+                    . '<table>';
 
-            // Boucle pour parcourir les lignes du tableau
-            foreach ($donnees as $rowIndex => $row) {
-                echo '<tr>';
-                $numColumns = 1;
+                    // Boucle pour parcourir les lignes du tableau
+                    foreach ($donnees as $rowIndex => $row) {
+                        echo '<tr>';
+                        $numColumns = 1;
 
-                // Boucle pour parcourir les cellules de chaque ligne
-                foreach ($row as $cellValue) {
-                    $class = '';
+                        // Boucle pour parcourir les cellules de chaque ligne
+                        foreach ($row as $cellValue) {
+                            $class = '';
 
-                    // Appliquer la classe 'table-title' à la colonne A et à la ligne 1
-                    if ($rowIndex === 0 || $numColumns == 1) {
-                        $class = 'table-title';
-                        echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
-                    } elseif ($rowIndex === 1 && $numColumns != 1) {
-                        $class = 'table-date';
-                        echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
-                    } else {
-                        echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                            // Appliquer la classe 'table-title' à la colonne A et à la ligne 1
+                            if ($rowIndex === 0 || $numColumns == 1) {
+                                $class = 'table-title';
+                                echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                            } elseif ($rowIndex === 1 && $numColumns != 1) {
+                                $class = 'table-date';
+                                echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                            } else {
+                                echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                            }
+
+                            $numColumns += 1;
+                        }
+
+                        echo '</tr>';
                     }
-
-                    $numColumns += 1;
-                }
-
-                echo '</tr>';
-            }
-            ?>
+                    */ ?>
                     </table>
-                    </div>
+                </div>
             </div>
 
+        -->
+        
+            <div class='showTable mobile'>
+                <div class="table-data">
+                    <table>
+                        <?php
+                        // Boucle pour parcourir les lignes du tableau
+                        foreach ($donnees as $rowIndex => $row) {
+                            echo '<tr>';
+                            $numColumns = 1;
+
+                            // Boucle pour parcourir les cellules de chaque ligne
+                            foreach ($row as $cellValue) {
+                                $class = '';
+
+                                // Appliquer la classe 'table-title' à la colonne A et à la ligne 1
+                                if ($rowIndex === 0 || $numColumns == 1) {
+                                    $class = 'table-title';
+                                    echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                                } elseif ($rowIndex === 1 && $numColumns != 1) {
+                                    $class = 'table-date';
+                                    echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                                } else {
+                                    echo '<td class="' . $class . ' column-' . $numColumns . '">' . $cellValue . '</td>';
+                                }
+
+                                $numColumns += 1;
+                            }
+
+                            echo '</tr>';
+                        }
+                        ?>
+                    </table>
+                </div>
+            </div>
+
+        
+        
             <script src="../checkScrollbar.js"></script>
-                    <?php
-                } catch (Exception $e) {
-                    echo 'Une erreur s\'est produite : ', $e->getMessage();
-                }
-                ?>
+            <?php
+        } catch (Exception $e) {
+            echo 'Une erreur s\'est produite.';
+            //echo 'Une erreur s\'est produite : ', $e->getMessage();
+        }
+        
+        
+      
